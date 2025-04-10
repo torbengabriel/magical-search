@@ -70,9 +70,7 @@ const people: Person[] = [
 
 ## 🎥 Demo
 
-<p align="center">
-  <img src="./docs/magical-search.gif" alt="Demo GIF" />
-</p>
+![Demo](./magical-search.gif)
 
 ---
 

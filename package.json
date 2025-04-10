@@ -1,0 +1,9 @@
+{
+    "name": "magical-search-monorepo",
+    "private": true,
+    "version": "0.0.0",
+    "workspaces": [
+      "magical-search",
+      "playground"
+    ]
+  }

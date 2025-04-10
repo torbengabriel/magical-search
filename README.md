@@ -31,7 +31,7 @@ type Person = {
 
 const people: Person[] = [
   { firstName: 'Alice', lastName: 'Smith', email: 'alice@example.com' },
-  { firstName: 'Bob', lastName: 'Jones', email: 'bob@example.com' },
+  { firstName: 'Bob', lastName: 'Jones', email: 'bob@example.com' }
 ];
 
 <SearchIcon<Person>
@@ -39,6 +39,9 @@ const people: Person[] = [
   color="#1e90ff"
   data={people}
   searchKeys={['firstName', 'email']}
+  filter={(p: Person, q: string) =>
+          `${p.firstName} ${p.lastName} ${p.email}`.toLowerCase().includes(q.toLowerCase())
+        }
   renderItem={(person) => (
     <div>
       {person.firstName} {person.lastName}
@@ -66,6 +69,8 @@ const people: Person[] = [
 | `emptyMessage`      | `string`                            | Custom message if no search results are found                |
 | `filter`            | `(item: T, query: string) => bool`  | Custom filter logic (optional – overrides `searchKeys`)      |
 
+> ⚠️ **Note:** If you provide both `filter` and `searchKeys`, the `filter` function will take precedence and `searchKeys` will be ignored.
+
 ---
 
 ## 🎥 Demo
@@ -86,4 +91,5 @@ const people: Person[] = [
 
 ## 📜 License
 
-MIT © [Torben Gabriel](https://github.com/torbengabriel)
+MIT © [Torben Gabriel](https://github.com/torben)
+
